@@ -2,9 +2,7 @@
     <div>
         <div class="input">
             <input type="text" v-model="todo" placeholder="add details" />
-            <button @click="addNewTodo" v-if="currentMode == 'new'">
-                Add
-            </button>
+            <button @click="addNewTodo" v-if="currentMode == 'new'">Add</button>
             <button @click="updateOldTodo" v-else>update</button>
         </div>
     </div>
@@ -80,9 +78,23 @@ export default {
         line-height: 17px;
         font-weight: 600;
 
-        &:hover{
+        &:hover {
             background: $primary-hover;
         }
     }
 }
+
+@media screen and (max-width: 450px) {
+    .input {
+        input {
+            width: 75%;
+        }
+
+        button{
+            width: 23%;
+        }
+    }
+}
+
+
 </style>

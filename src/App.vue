@@ -6,11 +6,11 @@
         <router-link :to="{ name: 'Completed' }"><a>Completed </a></router-link>
     </div>
     <hr />
-    <router-view v-slot="{Component}">
-      <transition name="fade" mode="out-in" >
-        <component :is="Component" />
-      </transition>
-    </router-view >
+    <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+            <component :is="Component" />
+        </transition>
+    </router-view>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,18 +61,18 @@
 }
 
 .router-link-active,
-a:hover{
-  border-bottom: 4px solid $primary;
+a:hover {
+    border-bottom: 4px solid $primary;
 }
 
 .fade-enter-from,
-.fade-leave-to{
-  opacity: 0;
+.fade-leave-to {
+    opacity: 0;
 }
 
 .fade-enter-active,
-.fade-leave-active{
-  transition: opacity 0.2s ease;
+.fade-leave-active {
+    transition: opacity 0.2s ease;
 }
 
 .displayTodo {
@@ -91,10 +91,10 @@ a:hover{
     flex-direction: row;
     align-items: center;
 
-    input{
-      height: 1.4rem;
-      width: 1.4rem;
-      margin-right: 0.5rem;
+    input {
+        height: 1.4rem;
+        width: 1.4rem;
+        margin-right: 0.5rem;
     }
 
     span {
@@ -117,12 +117,36 @@ hr {
     margin: 0%;
 }
 
-i{
-  color: $gray-500;
-  cursor: pointer;
+i {
+    color: $gray-500;
+    cursor: pointer;
 
-  &:hover{
-    color: $primary;
-  }
+    &:hover {
+        color: $primary;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #app {
+        padding: 10vh 10vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #app {
+        padding: 7vh 5vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #app {
+        padding: 5vh 5vw;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #app {
+        padding: 5vh 1vw;
+    }
 }
 </style>
