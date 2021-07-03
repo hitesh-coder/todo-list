@@ -11,6 +11,7 @@
             <component :is="Component" />
         </transition>
     </router-view>
+    <credits />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +23,14 @@
         rel="stylesheet"
     />
 </template>
+
+<script>
+import Credits from './components/credits.vue'
+
+export default {
+    components:{Credits}
+}
+</script>
 
 <style lang="scss">
 @import "./assets/variable.scss";
